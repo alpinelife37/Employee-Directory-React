@@ -11,6 +11,7 @@ class Main extends React.Component {
       searchedUser: [],
       sortDir: "asc",
       userSearch: event => {
+        console.log(event.target.value);
         const filter = event.target.value;
         const searchedResults = this.state.users.filter(item => {
           let values = Object.values(item)
@@ -19,12 +20,14 @@ class Main extends React.Component {
           return values.indexOf(filter.toLowerCase()) !== -1;
         });
         this.setState({ searchedUser: searchedResults });
+        console.log(searchedResults);
       }
     };
     this.sortBy = this.sortBy.bind(this);
   }
   componentDidMount() {
     API.getUsers().then(answer => {
+      console.log(answer.data.results);
       this.setState({
         users: answer.data.results,
         searchedUser: answer.data.results
@@ -47,13 +50,6 @@ class Main extends React.Component {
             return a.name.first.localeCompare(b.name.first);
           } else {
             return b.name.first.localeCompare(a.name.first);
-          }
-        }
-        if (key === "dob") {
-          if (this.state.sortDir === "asc") {
-            return a.dob.date.localeCompare(b.dob.date);
-          } else {
-            return b.dob.date.localeCompare(a.dob.date);
           }
         }
       })
@@ -85,12 +81,6 @@ class Main extends React.Component {
                   Phone
                 </th>
                 <th>Email</th>
-                <th
-                  className="sort"
-                  onClick={() => this.sortBy("dob", this.state.searchedUser)}
-                >
-                  Date of Birth
-                </th>
               </tr>
             </thead>
             <tbody>
@@ -102,5 +92,4 @@ class Main extends React.Component {
     );
   }
 }
-
 export default Main;
