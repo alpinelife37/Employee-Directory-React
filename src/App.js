@@ -1,16 +1,18 @@
 import React from "react";
-import logo from "./logo.svg";
+import Main from "../src/components/Main";
+import Nav from "../src/components/Nav";
+
 import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <Wrapper>
-        <Header />
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Nav />
         <Main />
-      </Wrapper>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
