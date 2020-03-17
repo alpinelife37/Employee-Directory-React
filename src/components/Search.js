@@ -17,3 +17,5 @@ function Search({ users }) {
     </div>
   );
 }
+
+export default Search;
