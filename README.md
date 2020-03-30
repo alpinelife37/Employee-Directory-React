@@ -7,7 +7,7 @@
 React based app that displays an employee directory and allows the user to sort by name or utilize the search box.
 
 ![Example profile](./public/assets/images/example.png)
-[Deployed Link](https://agile-hamlet-46369.herokuapp.com/)
+[Deployed Link]()
 
 ### BUILT WITH
 

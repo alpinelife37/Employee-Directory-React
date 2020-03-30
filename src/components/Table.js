@@ -10,6 +10,12 @@ class Table extends React.Component {
     searchUser: ""
   };
 
+  // state = {
+  //   users: [{}],
+  //   order: "descend",
+  //   filteredUsers: [{}]
+  // };
+
   handleOrder = () => {};
 
   handleSearch = () => {};
