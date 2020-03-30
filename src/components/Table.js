@@ -43,7 +43,7 @@ class Table extends React.Component {
         <tbody>
           {this.state.users.map((item, i) => (
             <TableRow
-              thumbnail={item.picture.thumbnail}
+              thumbnail={item.picture.medium}
               first={item.name.first}
               key={i}
               last={item.name.last}
