@@ -1,17 +1,18 @@
 import React from "react";
 import API from "../utils/API";
 import TableRow from "./TableRow";
+import "../styles/style.css";
 console.log(API.getUsers());
 
 const employees = [
   {
-    firstName: "james",
+    firstName: "James",
     lastName: "Nelson",
     phone: "123-4567"
   },
   {
     firstName: "Sally",
-    lastName: "Joe",
+    lastName: "May",
     phone: "123-4367"
   }
 ];
