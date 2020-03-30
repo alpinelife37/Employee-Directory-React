@@ -35,6 +35,9 @@ class Table extends React.Component {
             </th>
             <th scope="col">Last</th>
             <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
+            <th scope="col">State</th>
           </tr>
         </thead>
         <tbody>
@@ -45,6 +48,9 @@ class Table extends React.Component {
               key={i}
               last={item.name.last}
               phone={item.phone}
+              email={item.email}
+              age={item.registered.age}
+              state={item.location.state}
             />
           ))}
         </tbody>
