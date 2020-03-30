@@ -2,22 +2,27 @@ import React from "react";
 import API from "../utils/API";
 import TableRow from "./TableRow";
 import "../styles/style.css";
-console.log(API.getUsers());
-
-const employees = [
-  {
-    firstName: "James",
-    lastName: "Nelson",
-    phone: "123-4567"
-  },
-  {
-    firstName: "Sally",
-    lastName: "May",
-    phone: "123-4367"
-  }
-];
 
 class Table extends React.Component {
+  state = {
+    users: [],
+    tableOrder: "initial",
+    searchUser: ""
+  };
+
+  handleOrder = () => {};
+
+  handleSearch = () => {};
+
+  componentDidMount() {
+    API.getUsers().then(res => {
+      this.setState({
+        users: res.data.results
+      });
+      console.log(this.state.users);
+    });
+  }
+
   render() {
     return (
       <table className="table">
@@ -33,11 +38,13 @@ class Table extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {employees.map(item => (
+          {this.state.users.map((item, i) => (
             <TableRow
-              first={item.firstName}
-              key={item.phone}
-              last={item.lastName}
+              thumbnail={item.picture.thumbnail}
+              first={item.name.first}
+              key={i}
+              last={item.name.last}
+              phone={item.phone}
             />
           ))}
         </tbody>

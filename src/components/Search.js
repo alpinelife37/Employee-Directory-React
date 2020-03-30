@@ -4,7 +4,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className="container">
-        <form ClassName="col col-sm form-inline">
+        <form className="col col-sm form-inline">
           <div className="form-group mb-5 mt-5">
             <input
               className="form-control"
