@@ -11,12 +11,6 @@ class Table extends React.Component {
     filteredList: []
   };
 
-  // state = {
-  //   users: [{}],
-  //   order: "descend",
-  //   filteredUsers: [{}]
-  // };
-
   handleOrder = () => {
     this.setState({
       order: this.state.order === "descend" ? "ascend" : "descend"
@@ -43,20 +37,13 @@ class Table extends React.Component {
       }
     }
 
-    // a must be equal to b
     return 0;
   };
 
-  //   handleSearch = () => {
-  // //as the user types into the search box, the state is changed after each keystroke, eliminating anything that doesnt match
-
-  //   };
   handleSearchChange = event => {
-    console.log(event.target.value);
     const filter = event.target.value;
     const filteredList = this.state.users.filter(item => {
       let values = item.name.first.toLowerCase();
-      console.log(values);
       return values.indexOf(filter.toLowerCase()) !== -1;
     });
     this.setState({ filteredList });
@@ -73,7 +60,6 @@ class Table extends React.Component {
         users: res.data.results,
         filteredList: res.data.results
       });
-      console.log(this.state.users);
     });
   }
 
@@ -81,12 +67,10 @@ class Table extends React.Component {
     return (
       <div>
         <Search handleSearchChange={this.handleSearchChange} />
-
         <table className="table">
           <thead>
             <tr>
               <th scope="col">Image</th>
-              {/* make a button to sort by first name */}
               <th onClick={this.handleOrder.bind(this)} scope="col">
                 First
               </th>

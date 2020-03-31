@@ -1,6 +1,6 @@
 import React from "react";
+import "../styles/style.css";
 
-//class Search extends React.Component {
 function Search({ handleSearchChange }) {
   return (
     <div className="container">
@@ -15,6 +15,7 @@ function Search({ handleSearchChange }) {
           />
         </div>
       </form>
+      <div className="inst">Click "First" to sort</div>
     </div>
   );
 }

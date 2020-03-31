@@ -7,7 +7,7 @@
 React based app that displays an employee directory and allows the user to sort by name or utilize the search box.
 
 ![Example profile](./public/assets/images/example.png)
-[Deployed Link]()
+[Deployed Link](https://sheltered-taiga-64695.herokuapp.com/)
 
 ### BUILT WITH
 
